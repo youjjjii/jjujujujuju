@@ -1,0 +1,8 @@
+def is_chain_valid():
+    for i in range(1, len(blockchain.chain)):
+        current_block = blockchain.chain[i]
+        previous_block = blockchain.chain[i - 1]
+        # 校验当前区块的previous_hash是否等于前一个区块的哈希值
+        if current_block.previous_hash != calculate_hash(previous_block):
+            return False
+    return True
